@@ -1,0 +1,36 @@
+<html>
+
+<head>
+  <base href="/">
+  <title>NG 2 Render Without Custom Tag</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/public/css/bootstrap.css">
+
+  <!-- CSS from Todoist -->
+
+</head>
+
+<body>
+  <my-app>Loading...</my-app>
+
+  <!-- 1. Load libraries -->
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/reflect-metadata/Reflect.js"></script>
+
+  <!-- Polyfill(s) for older browsers -->
+  <!--<script src="node_modules/es6-shim/es6-shim.min.js"></script>-->
+  <script src="node_modules/systemjs/dist/system.js"></script>
+  <script src="node_modules/rxjs/bundles/Rx.min.js"></script>
+
+  <!-- 2. Configure SystemJS -->
+  <script src="./systemjs.config.js"></script>
+  <script defer>
+    System.import('app/main')
+        .catch(function(err){ console.error(err);  });
+  </script>
+
+
+</body>
+
+</html>
